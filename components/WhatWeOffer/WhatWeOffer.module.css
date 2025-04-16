@@ -1,0 +1,14 @@
+.icon:hover > .image {
+  visibility: visible;
+}
+.line {
+background-color: white;
+height: 3px;
+width: 10%;
+border-radius: 0.5rem;
+}
+.borderr::after {
+  content: none;
+  
+}
+

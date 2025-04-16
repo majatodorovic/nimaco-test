@@ -1,0 +1,42 @@
+{
+  "name": "ecommerce-b2c-template-3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-google-maps/api": "^2.19.3",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.15",
+    "@tanstack/query-sync-storage-persister": "^5.45.0",
+    "@tanstack/react-query": "^5.40.0",
+    "@tanstack/react-query-persist-client": "^5.45.1",
+    "axios": "^1.3.4",
+    "cookies-next": "^4.1.0",
+    "eslint-config-next": "^13.4.2",
+    "html-react-parser": "^3.0.15",
+    "js-cookie": "^3.0.1",
+    "keen-slider": "^6.8.5",
+    "next": "^14.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-hook-form": "^7.43.9",
+    "react-toastify": "^9.1.2",
+    "rsuite": "^5.30.0",
+    "sharp": "^0.32.1",
+    "swiper": "^9.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4"
+  }
+}

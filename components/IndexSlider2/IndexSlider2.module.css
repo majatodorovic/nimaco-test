@@ -1,0 +1,21 @@
+.line {
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    height: 2.5px;
+    background-color: #d3a963;
+    width: 90px;
+    display: block;
+}
+.benefit {
+    display: flex;
+    text-transform: capitalize;
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+.txt {
+    margin-left: 1rem;
+}
+.benefitList {
+    margin-top: 2rem;
+    margin-left: 1.6rem;
+}
