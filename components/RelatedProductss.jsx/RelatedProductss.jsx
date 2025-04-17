@@ -10,7 +10,7 @@ import { list } from "@/app/api/api";
 
 const RelatedProductss = ({ id }) => {
   const { data: related_products = [], isLoading } = useQuery({
-    queryKey: ["related-products"],
+    queryKey: ["related-products", id],
     queryFn: async () => {
       return await list(`/product-details/recommended/${id}`).then(
         (response) => response?.payload?.items

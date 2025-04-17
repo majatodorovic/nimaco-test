@@ -21,37 +21,26 @@ export const ThumbSuspense = ({
   return (
     <Link
       href={`/${product?.link?.link_path}`}
-      className={`
-        col-span-1 
-        w-full 
-        flex flex-col 
-        group 
-        border border-[#ecebe5] 
-        hover:border-[#d0cec8] 
-        transition-all ease 
-        p-3 md:p-5 
-        rounded-md
-        bg-white
-      `}
+      className={`col-span-1 aspect-2/3 relative flex flex-col group border border-[#ecebe5] hover:border-[#d0cec8] transition-all ease p-2 md:p-5 rounded-md`}
     >
-      {/* Stickers */}
       {product?.stickers?.length > 0 && (
-        <div className="absolute top-1 left-1 z-30 flex flex-col gap-2">
-          {product.stickers.map((sticker, index) => (
-            <span
+        <div className={`absolute top-1 left-1 w-fit flex flex-col gap-3 z-30`}>
+          {product?.stickers.map((sticker, index) => (
+            <div
               key={index}
-              className="px-2 py-1 bg-croonus-3 text-white text-xs rounded"
+              className={`px-2 py-1 bg-croonus-3 text-white text-[0.8rem]`}
             >
-              {sticker.name}
-            </span>
+              <span>{sticker.name}</span>
+            </div>
           ))}
         </div>
       )}
 
-      {/* Discount badge */}
       {product?.price?.discount?.active && (
-        <div className="absolute top-1 right-1 z-30 text-white text-[13px]">
-          <div className="bg-[#044e7b] px-3 py-2 rounded-full">
+        <div
+          className={`absolute -right-1 -top-1 z-[10] text-white text-[13px]`}
+        >
+          <div className={`bg-[#044e7b] px-2 py-3 rounded-full `}>
             -
             {(
               ((product?.price?.price?.original -
@@ -63,38 +52,51 @@ export const ThumbSuspense = ({
           </div>
         </div>
       )}
-
-      {/* Image */}
-      <div className="relative w-full aspect-[1/1] mb-3 rounded">
+      <div className={`relative`}>
         <Image
           src={convertHttpToHttps(product?.image?.[0]) || NoImageImage}
-          alt={product?.basic_data?.name || "Product image"}
-          fill
-          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 25vw"
+          alt={product?.basic_data?.name}
+          width={0}
+          height={0}
+          sizes={`80vw`}
+          className={`w-full h-auto`}
         />
-        {/* Saznajte više tekst */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center py-1 bg-croonus-3 text-croonus-2 text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 md:block transition-opacity duration-200">
-          Saznajte više
+        <div
+          className={`absolute mx-auto 
+    w-full 
+    justify-center py-2 text-center 
+    bg-croonus-3 text-croonus-2 z-50
+    flex 
+    group-hover:flex  mt-[25px]`}
+        >
+          <span className="">Saznajte više</span>
         </div>
       </div>
-
-      {/* Title */}
-      <div className="flex flex-col mt-auto z-10 mb-2">
-        <p className="font-semibold text-base text-croonus-1 group-hover:text-croonus-3 line-clamp-2 max-sm:text-sm">
+      <div className={`flex-col  flex relative z-[50] mt-20`}>
+        <p
+          className={`font-semibold text-base text-croonus-1 group-hover:text-croonus-3 line-clamp-2 max-md:text-[0.85rem]`}
+        >
           {product?.basic_data?.name}
         </p>
-      </div>
 
-      {/* Price */}
-      <div className="flex items-center gap-2 justify-start bg-croonus-3 rounded-md px-2 py-1">
-        <ProductPrice
-          price={product?.price}
-          inventory={product?.inventory}
-          className="font-bold text-sm text-croonus-2"
-        />
+        {/*<div className="mt-2 flex items-center">*/}
+        {/*  <p className={`text-[0.9rem] text-[#939393] line-clamp-2 min-h-[42px]`}>*/}
+        {/*    {product?.basic_data?.short_description}*/}
+        {/*  </p>*/}
+        {/*</div>*/}
+      </div>
+      <div
+        className={`mt-10 w-full max-md:text-left max-md:items-start max-md:mt-1.5 flex items-center justify-center max-md:gap-1 gap-[10px] max-md:mr-auto bg-croonus-3 rounded-md py-1`}
+      >
+        <div className={`px-2 font-bold text-center`}>
+          <ProductPrice
+            price={product?.price}
+            inventory={product?.inventory}
+            className={`w-full`}
+          />
+        </div>
         {product?.price?.discount?.active && (
-          <span className="text-[13px] line-through text-[#877372]">
+          <span className={`max-md:text-[#877372] line-through text-[13px]`}>
             {currencyFormat(product?.price?.price?.original)}
           </span>
         )}

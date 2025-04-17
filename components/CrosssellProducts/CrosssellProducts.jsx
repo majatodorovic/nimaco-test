@@ -10,7 +10,7 @@ const CrosssellProducts = ({ id }) => {
   console.log("Product ID:", id); // Koristi id koji je prosleđen kao prop
 
   const { data: cross_sell_products = [], isLoading } = useQuery({
-    queryKey: ["cross-sell-products, id"],
+    queryKey: ["cross-sell-products", id],
     queryFn: async () => {
       return await list(`/product-details/cross-sell/${id}`).then(
         (response) => response?.payload?.items
