@@ -29,19 +29,19 @@ const RelatedProductss = ({ id }) => {
     return (
       <div className="mb-6 mt-[3rem] overflow-visible max-md:col-span-4 max-sm:mx-auto max-sm:mt-[1.5rem] max-sm:w-[95%] md:mx-[0.2rem]">
         <div className="flex w-full items-center justify-between">
-          <h5 className="text-[1.5rem] font-bold max-md:text-[1.1rem] ml-17">
+          <h5 className="text-[1.5rem] font-bold max-md:text-[1.1rem] ml-[4rem]">
             Povezani proizvodi
           </h5>
         </div>
         <div className="mt-[2.5rem] max-sm:mt-[1rem]">
           <Swiper
-            slidesPerView={1.5}
+            slidesPerView={1}
             spaceBetween={10}
             navigation={true}
             modules={[Navigation]}
             fadeEffect={{ crossFade: true }}
             loop={true}
-            className="mySwiper3 w-full select-none"
+            className="mySwiper3 w-[90vw] select-none"
             breakpoints={{
               640: {
                 slidesPerView: 1.5,

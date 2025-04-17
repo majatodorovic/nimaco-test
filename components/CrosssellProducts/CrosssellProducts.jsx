@@ -41,7 +41,7 @@ const CrosssellProducts = ({ id }) => {
             modules={[Navigation]}
             fadeEffect={{ crossFade: true }}
             loop={true}
-            className="mySwiper3 w-[100vw] select-none"
+            className="mySwiper3 w-[90vw] select-none"
             breakpoints={{
               640: {
                 slidesPerView: 1.5,

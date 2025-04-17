@@ -734,7 +734,7 @@
 }
 @media (max-width: 768px) {
   .mySwiper3 {
-    width: 80%;
+    width: 100%;
     margin: auto;
     height: 60% !important;
   }
